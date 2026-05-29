@@ -4,6 +4,7 @@ import path from 'path';
 import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
+  base: '/Full-Stack-Car-Dealer-Capstone-Python-JS/', 
   return {
     plugins: [react(), tailwindcss()],
     resolve: {
