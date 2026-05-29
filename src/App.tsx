@@ -1935,7 +1935,7 @@ export default function App() {
                 <div className="bg-white border border-slate-200 rounded-lg overflow-hidden flex flex-col shadow-xs hover:border-blue-300 transition-all duration-300 hover:shadow-xs group">
                   <div className="h-44 w-full bg-slate-100 relative overflow-hidden">
                     <img 
-                      src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80"
+                      src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&h=400&crop=faces&q=80"
                       alt="John Doe - CEO in BMW"
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -1961,7 +1961,7 @@ export default function App() {
                 <div className="bg-white border border-slate-200 rounded-lg overflow-hidden flex flex-col shadow-xs hover:border-red-300 transition-all duration-300 hover:shadow-xs group">
                   <div className="h-44 w-full bg-slate-100 relative overflow-hidden">
                     <img 
-                      src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80"
+                      src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&h=400&crop=faces&q=80"
                       alt="Jane Smith - Relations in Audi"
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -1987,7 +1987,7 @@ export default function App() {
                 <div className="bg-white border border-slate-200 rounded-lg overflow-hidden flex flex-col shadow-xs hover:border-amber-300 transition-all duration-300 hover:shadow-xs bg-gradient-to-br from-blue-50/10 to-transparent group">
                   <div className="h-44 w-full bg-slate-100 relative overflow-hidden">
                     <img 
-                      src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80"
+                      src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&h=400&crop=faces&q=80"
                       alt="Brian McCarthy - Capstone Lead in Mercedes"
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"

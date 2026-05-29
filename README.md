@@ -4,6 +4,12 @@ This is the comprehensive capstone application index and management panel. It ac
 
 **Written & Documented by Brian McCarthy**
 
+### 📋 Project & Repository Details
+- **Repository Name**: Full-Stack-Car-Dealer-Capstone-Python-JS
+- **Project Name**: Full-Stack-Car-Dealer-Capstone-Python-JS
+- **Website Primary Title**: Best Cars Portal
+- **Website Secondary Title**: Full Stack Application Development Capstone Project
+
 ---
 
 ## 🛠️ Technology Stack Breakdown
