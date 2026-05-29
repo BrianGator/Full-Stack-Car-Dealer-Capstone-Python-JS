@@ -454,11 +454,16 @@ export default function App() {
     setSessionActive(false);
   };
 
-  // Routing sync & click interception to prevent page failures in preview frame standard URLs
+  // Routing sync & click interception supporting /Full-Stack-Car-Dealer-Capstone-Python-JS as basename parameter
   React.useEffect(() => {
     const syncRouteWithLocation = () => {
-      const path = window.location.pathname;
+      let path = window.location.pathname;
       const hash = window.location.hash;
+      
+      const basename = '/Full-Stack-Car-Dealer-Capstone-Python-JS';
+      if (path.startsWith(basename)) {
+        path = path.slice(basename.length);
+      }
       
       if (path === '/about/' || path === '/about' || hash === '#/about') {
         setActiveTab('about');
@@ -468,7 +473,7 @@ export default function App() {
         setActiveTab('admin');
       } else if (path === '/deliverables/' || path === '/deliverables' || hash === '#/deliverables') {
         setActiveTab('deliverables');
-      } else if (path === '/' || hash === '#/' || hash === '#/dealers') {
+      } else if (path === '/' || path === '' || hash === '#/' || hash === '#/dealers') {
         setActiveTab('dealers');
       }
     };
@@ -477,8 +482,12 @@ export default function App() {
       const target = e.target as HTMLElement;
       const anchor = target.closest('a');
       if (anchor) {
-        const href = anchor.getAttribute('href');
+        let href = anchor.getAttribute('href');
         if (href) {
+          const basename = '/Full-Stack-Car-Dealer-Capstone-Python-JS';
+          if (href.startsWith(basename)) {
+            href = href.slice(basename.length);
+          }
           if (href === '/about/' || href === '/about') {
             e.preventDefault();
             setActiveTab('about');
