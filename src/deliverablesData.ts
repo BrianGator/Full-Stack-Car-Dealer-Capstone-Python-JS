@@ -428,7 +428,7 @@ Run pytest unit-tests module
     type: 'text',
     filename: 'deploymentURL',
     githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/Project-Deliverables/deploymentURL',
-    content: `https://dealership-review-capstone-django.codeengine.appdomain.cloud/`
+    content: `https://briangator.github.io/Full-Stack-Car-Dealer-Capstone-Python-JS/`
   }
 ];
 

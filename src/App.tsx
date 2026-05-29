@@ -529,7 +529,7 @@ export default function App() {
   return (
     <div className="flex flex-col min-h-screen bg-slate-50 text-slate-900 font-sans antialiased">
       {/* Top Banner Navigation bar matching "Professional Polish" layout */}
-      <nav className="h-16 bg-slate-950 text-white flex items-center justify-between px-6 border-b border-slate-800 shadow-xl shrink-0 z-10">
+      <nav className="sticky top-0 h-16 bg-slate-950 text-white flex items-center justify-between px-6 border-b border-slate-800 shadow-xl shrink-0 z-50">
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-2 cursor-pointer" onClick={() => { setActiveTab('dealers'); setSelectedDealer(null); window.location.hash = '#/dealers'; }}>
             <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center font-bold text-lg text-white shadow-md shadow-blue-500/30">B</div>
@@ -1386,15 +1386,19 @@ export default function App() {
                                       {dealer.address}
                                     </td>
                                     <td className="px-4 py-3 text-center" onClick={(e) => e.stopPropagation()}>
-                                      <button
-                                        onClick={() => {
-                                          setSelectedDealer(dealer);
-                                          setIsAddingReview(true);
-                                        }}
-                                        className="text-[10px] bg-slate-900 text-white hover:bg-slate-800 px-2.5 py-1 rounded transition-colors whitespace-nowrap font-bold"
-                                      >
-                                        Review Dealer
-                                      </button>
+                                      {sessionActive ? (
+                                        <button
+                                          onClick={() => {
+                                            setSelectedDealer(dealer);
+                                            setIsAddingReview(true);
+                                          }}
+                                          className="text-[10px] bg-slate-900 text-white hover:bg-slate-800 px-2.5 py-1 rounded transition-colors whitespace-nowrap font-bold"
+                                        >
+                                          Review Dealer
+                                        </button>
+                                      ) : (
+                                        <span className="text-[10px] text-slate-400 font-medium italic">Sign in to review</span>
+                                      )}
                                     </td>
                                   </tr>
                                 );
@@ -1735,13 +1739,20 @@ export default function App() {
 
                         <div className="flex justify-between items-center border-b border-slate-200/60 pb-1 mt-1">
                           <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Reviews Output Feed</span>
-                          <button
-                            onClick={() => setIsAddingReview(true)}
-                            className="text-[10px] text-blue-600 hover:text-blue-700 bg-blue-50 border border-blue-200 px-2 py-0.5 rounded font-bold flex items-center gap-0.5"
-                          >
-                            <Plus className="w-2.5 h-2.5" />
-                            Post a Review
-                          </button>
+                          {sessionActive ? (
+                            <button
+                              onClick={() => {
+                                setReviewerName(currentUser || 'admin');
+                                setIsAddingReview(true);
+                              }}
+                              className="text-[10px] text-blue-600 hover:text-blue-700 bg-blue-50 border border-blue-200 px-2 py-0.5 rounded font-bold flex items-center gap-0.5 animate-pulse"
+                            >
+                              <Plus className="w-2.5 h-2.5" />
+                              Post a Review
+                            </button>
+                          ) : (
+                            <span className="text-[10px] text-slate-400 italic">Sign in to write review</span>
+                          )}
                         </div>
 
                         {/* Rendering Filtered Reviews list */}

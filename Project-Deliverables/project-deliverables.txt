@@ -6,7 +6,7 @@
 Author: Lead Full-Stack Software Developer
 Project Name: Full-Stack-Car-Dealer-Capstone-Python-JS
 Forked Repository Name: Full-Stack-Car-Dealer-Capstone-Python-JS
-Deployment URL: https://dealership-review-capstone-django.codeengine.appdomain.cloud/
+Deployment URL: https://briangator.github.io/Full-Stack-Car-Dealer-Capstone-Python-JS/
 Backend API URL: https://capstone-developer-3030.theiadocker-3-labs-prod-theia-labs-direct-labs.us-east.containers.appdomain.cloud/
 Frontend App URL: https://capstone-developer-8000.theiadocker-3-labs-prod-theia-labs-direct-labs.us-east.containers.appdomain.cloud/
 
