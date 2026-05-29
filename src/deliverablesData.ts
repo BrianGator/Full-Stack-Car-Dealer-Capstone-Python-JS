@@ -15,7 +15,7 @@ export const deliverables: Deliverable[] = [
     title: 'Project README (GitHub URL)',
     type: 'text',
     filename: 'README.md',
-    githubUrl: 'https://github.com/capstone-developer/xrwvm-fullstack_developer_capstone/blob/main/README.md',
+    githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/README.md',
     content: `# fullstack_developer_capstone\n\nWelcome to the National Car Dealership Association Portal.\nThis repository contains the complete full-stack implementation of the Car Dealership & Review application, including a Django web server, a Dockerized Express-MongoDB reviews database microservice, and a cloud-deployed Sentiment Analysis service.\n\n### Project Name Validation Label:\n**fullstack_developer_capstone**`
   },
   {
@@ -24,7 +24,7 @@ export const deliverables: Deliverable[] = [
     title: 'Django Server Logs',
     type: 'terminal',
     filename: 'django_server',
-    githubUrl: 'https://github.com/capstone-developer/xrwvm-fullstack_developer_capstone/blob/main/server/django_server',
+    githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/server/django_server',
     content: `(djangoenv) user@theia-host:~/xrwvm-fullstack_developer_capstone/server$ python3 manage.py runserver 0.0.0.0:8000
 Watching for file changes with StatReloader
 Performing system checks...
@@ -47,7 +47,7 @@ Quit the server with CONTROL-C.
     title: 'About Us Page static HTML',
     type: 'code',
     filename: 'About.html',
-    githubUrl: 'https://github.com/capstone-developer/xrwvm-fullstack_developer_capstone/blob/main/server/frontend/static/About.html',
+    githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/server/frontend/static/About.html',
     content: `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,7 +95,7 @@ Quit the server with CONTROL-C.
     title: 'Contact Us Page static HTML',
     type: 'code',
     filename: 'Contact.html',
-    githubUrl: 'https://github.com/capstone-developer/xrwvm-fullstack_developer_capstone/blob/main/server/frontend/static/Contact.html',
+    githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/server/frontend/static/Contact.html',
     content: `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -147,7 +147,7 @@ Quit the server with CONTROL-C.
     title: 'cURL: Login User POST',
     type: 'terminal',
     filename: 'loginuser',
-    githubUrl: 'https://github.com/capstone-developer/xrwvm-fullstack_developer_capstone/blob/main/Project-Deliverables/loginuser',
+    githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/Project-Deliverables/loginuser',
     content: `curl -X POST "https://capstone-developer-8000.theiadocker-3-labs-prod-theia-labs-direct-labs.us-east.containers.appdomain.cloud/djangoapp/login" \\
   -H "Content-Type: application/json" \\
   -d '{"userName": "admin", "password": "rootpassword"}'
@@ -160,7 +160,7 @@ Quit the server with CONTROL-C.
     title: 'cURL: Logout User GET',
     type: 'terminal',
     filename: 'logoutuser',
-    githubUrl: 'https://github.com/capstone-developer/xrwvm-fullstack_developer_capstone/blob/main/Project-Deliverables/logoutuser',
+    githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/Project-Deliverables/logoutuser',
     content: `curl -X GET "https://capstone-developer-8000.theiadocker-3-labs-prod-theia-labs-direct-labs.us-east.containers.appdomain.cloud/djangoapp/logout"
 
 {"userName": ""}`
@@ -171,7 +171,7 @@ Quit the server with CONTROL-C.
     title: 'Registration Widget React Module',
     type: 'code',
     filename: 'Register.jsx',
-    githubUrl: 'https://github.com/capstone-developer/xrwvm-fullstack_developer_capstone/blob/main/server/frontend/src/components/Register/Register.jsx',
+    githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/server/frontend/src/components/Register/Register.jsx',
     content: `import React, { useState } from "react";
 import "./Register.css";
 import user_icon from "../assets/person.png"
@@ -238,7 +238,7 @@ export default Register;`
     title: 'cURL: Get Dealer Reviews by ID',
     type: 'terminal',
     filename: 'getdealerreviews',
-    githubUrl: 'https://github.com/capstone-developer/xrwvm-fullstack_developer_capstone/blob/main/Project-Deliverables/getdealerreviews',
+    githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/Project-Deliverables/getdealerreviews',
     content: `curl -X GET "https://capstone-developer-3030.theiadocker-3-labs-prod-theia-labs-direct-labs.us-east.containers.appdomain.cloud/fetchReviews/dealer/15"
 
 [
@@ -264,7 +264,7 @@ export default Register;`
     title: 'cURL: Get All Dealerships',
     type: 'terminal',
     filename: 'getalldealers',
-    githubUrl: 'https://github.com/capstone-developer/xrwvm-fullstack_developer_capstone/blob/main/Project-Deliverables/getalldealers',
+    githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/Project-Deliverables/getalldealers',
     content: `curl -X GET "https://capstone-developer-3030.theiadocker-3-labs-prod-theia-labs-direct-labs.us-east.containers.appdomain.cloud/fetchDealers"
 
 [
@@ -306,7 +306,7 @@ export default Register;`
     title: 'cURL: Get Dealer By ID',
     type: 'terminal',
     filename: 'getdealerbyid',
-    githubUrl: 'https://github.com/capstone-developer/xrwvm-fullstack_developer_capstone/blob/main/Project-Deliverables/getdealerbyid',
+    githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/Project-Deliverables/getdealerbyid',
     content: `curl -X GET "https://capstone-developer-3030.theiadocker-3-labs-prod-theia-labs-direct-labs.us-east.containers.appdomain.cloud/fetchDealer/15"
 
 {
@@ -326,7 +326,7 @@ export default Register;`
     title: 'cURL: Get Dealers By State (Kansas)',
     type: 'terminal',
     filename: 'getdealersbyState',
-    githubUrl: 'https://github.com/capstone-developer/xrwvm-fullstack_developer_capstone/blob/main/Project-Deliverables/getdealersbyState',
+    githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/Project-Deliverables/getdealersbyState',
     content: `curl -X GET "https://capstone-developer-3030.theiadocker-3-labs-prod-theia-labs-direct-labs.us-east.containers.appdomain.cloud/fetchDealers/Kansas"
 
 [
@@ -358,7 +358,7 @@ export default Register;`
     title: 'cURL: Get SQLite Car Makes & Models Database',
     type: 'terminal',
     filename: 'getallcarmakes',
-    githubUrl: 'https://github.com/capstone-developer/xrwvm-fullstack_developer_capstone/blob/main/Project-Deliverables/getallcarmakes',
+    githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/Project-Deliverables/getallcarmakes',
     content: `curl -X GET "https://capstone-developer-8000.theiadocker-3-labs-prod-theia-labs-direct-labs.us-east.containers.appdomain.cloud/djangoapp/get_cars"
 
 [
@@ -387,7 +387,7 @@ export default Register;`
     title: 'cURL: Sentiment Analysis Endpoint',
     type: 'terminal',
     filename: 'analyzereview',
-    githubUrl: 'https://github.com/capstone-developer/xrwvm-fullstack_developer_capstone/blob/main/Project-Deliverables/analyzereview',
+    githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/Project-Deliverables/analyzereview',
     content: `curl -X GET "https://sentiment-analyzer.codeengine.appdomain.cloud/analyze/Fantastic%20services"
 
 {
@@ -402,7 +402,7 @@ export default Register;`
     title: 'CI/CD Pipeline Outputs',
     type: 'terminal',
     filename: 'CICD',
-    githubUrl: 'https://github.com/capstone-developer/xrwvm-fullstack_developer_capstone/blob/main/Project-Deliverables/CICD',
+    githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/Project-Deliverables/CICD',
     content: `Run GitHub Actions Workspace CI/CD check workflow
 Run actions/checkout@v3
   with:
@@ -427,7 +427,7 @@ Run pytest unit-tests module
     title: 'Cloud Deployment Endpoint',
     type: 'text',
     filename: 'deploymentURL',
-    githubUrl: 'https://github.com/capstone-developer/xrwvm-fullstack_developer_capstone/blob/main/Project-Deliverables/deploymentURL',
+    githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/Project-Deliverables/deploymentURL',
     content: `https://dealership-review-capstone-django.codeengine.appdomain.cloud/`
   }
 ];
