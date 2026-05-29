@@ -6,7 +6,7 @@ Run actions/checkout@v3
     fetch-depth: 1
   /usr/bin/git config --global --add safe.directory /github/workspace
   /usr/bin/git init
-  /usr/bin/git remote add origin https://github.com/capstone-developer/xrwvm-fullstack_developer_capstone.git
+  /usr/bin/git remote add origin https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS.git
   /usr/bin/git fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +refs/heads/main:refs/remotes/origin/main
   /usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
 

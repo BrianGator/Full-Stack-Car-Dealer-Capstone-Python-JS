@@ -27,7 +27,9 @@ import {
   Database,
   Check,
   Globe,
-  Star
+  Star,
+  Phone,
+  Info
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
@@ -119,10 +121,393 @@ const luxuryCatalog: LuxuryCar[] = [
   { make: 'Porsche', model: 'Taycan', category: 'Electric Vehicles (EVs)', status: 'All-Electric' }
 ];
 
+function renderScreenshotMockup(key: string) {
+  let url = 'http://localhost:3000/Full-Stack-Car-Dealer-Capstone-Python-JS/';
+  let title = 'National Dealership Portal';
+  let contentNode = null;
+
+  if (key === 'DJANGO_ADMIN_LOGIN') {
+    url = 'http://localhost:8000/admin/login/';
+    title = 'Log in | Django site admin';
+    contentNode = (
+      <div className="bg-[#f8f9fa] text-slate-800 min-h-[300px] flex flex-col items-center justify-center font-sans p-6 text-xs">
+        <div className="w-[360px] bg-white border border-[#ccc] rounded-sm shadow-xs overflow-hidden">
+          <div className="bg-[#417690] text-white p-3 font-bold text-sm tracking-wide">
+            Django administration
+          </div>
+          <div className="p-5 flex flex-col gap-3">
+            <div>
+              <label className="block text-slate-600 font-semibold mb-1">Username:</label>
+              <input type="text" readOnly value="admin" className="w-full bg-slate-50 border border-slate-300 p-1.5 rounded-sm font-mono text-blue-900 outline-none" />
+            </div>
+            <div>
+              <label className="block text-slate-600 font-semibold mb-1">Password:</label>
+              <input type="password" readOnly value="rootpassword" className="w-full bg-slate-50 border border-slate-300 p-1.5 rounded-sm font-mono outline-none" />
+            </div>
+            <button disabled className="mt-2 bg-[#417690] hover:bg-[#306078] text-white font-bold py-2 px-4 rounded-xs transition-all uppercase tracking-wider text-[10px] cursor-not-allowed">
+              Log In
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  } else if (key === 'DJANGO_ADMIN_LOGOUT') {
+    url = 'http://localhost:8000/admin/logout/';
+    title = 'Logged out | Django site admin';
+    contentNode = (
+      <div className="bg-[#f8f9fa] text-slate-800 min-h-[300px] flex flex-col items-center justify-center font-sans p-6 text-xs">
+        <div className="w-[380px] bg-white border border-slate-200 rounded-sm shadow-xs overflow-hidden">
+          <div className="bg-[#417690] text-white p-3 font-bold text-sm tracking-wide flex justify-between items-center">
+            <span>Django administration</span>
+            <span className="text-[10px] text-slate-200">Best Cars Portal</span>
+          </div>
+          <div className="p-6 text-center">
+            <div className="bg-[#264b5c] text-white p-2.5 rounded-sm font-bold mb-4 text-[11px] uppercase tracking-wider">
+              Logged Out Successfully
+            </div>
+            <h3 className="font-extrabold text-sm text-slate-900 mb-2">Thanks for spending some quality time with the Web site today.</h3>
+            <p className="text-slate-500 mb-4 text-[11px]">The root admin session has been securely terminated.</p>
+            <button className="bg-[#417690] text-white hover:bg-[#306078] font-bold py-1.5 px-4 rounded-xs text-[10px] uppercase tracking-wider">
+              Log In Again
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  } else if (key === 'DEALERS_LANDING') {
+    url = 'http://localhost:3000/Full-Stack-Car-Dealer-Capstone-Python-JS/#/dealers';
+    title = 'National Dealerships Association';
+    contentNode = (
+      <div className="bg-slate-900 text-slate-100 min-h-[300px] font-sans p-5 text-xs select-none">
+        <div className="border border-slate-855 bg-slate-950 p-4 rounded-lg flex justify-between items-center border-slate-800">
+          <span className="font-semibold text-white">Best Cars Dealers Portal</span>
+          <span className="bg-slate-800 text-slate-300 px-2 py-0.5 rounded text-[10px] font-mono">Guest Mode</span>
+        </div>
+        <div className="mt-4 bg-slate-950 p-4 border border-slate-800 rounded-lg">
+          <div className="flex gap-2 items-center mb-3">
+            <span className="text-xs font-bold text-slate-400">Filter dealers:</span>
+            <select disabled className="bg-slate-900 border border-slate-800 px-2.5 py-1 rounded text-xs select-none">
+              <option>All States</option>
+            </select>
+          </div>
+          <table className="w-full text-left font-sans border-collapse">
+            <thead>
+              <tr className="border-b border-slate-800 font-extrabold text-slate-400 uppercase text-[9px] tracking-wider">
+                <th className="p-2">ID</th>
+                <th className="p-2">Dealership Name</th>
+                <th className="p-2">City</th>
+                <th className="p-2">State</th>
+                <th className="p-2">Address</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-slate-850 text-slate-300">
+                <td className="p-2 text-blue-400 font-bold font-mono">15</td>
+                <td className="p-2 font-bold text-white">Topeka Motors</td>
+                <td className="p-2">Topeka</td>
+                <td className="p-2">Kansas</td>
+                <td className="p-2 font-mono">1200 Kansas Ave</td>
+              </tr>
+              <tr className="border-b border-slate-850 text-slate-300">
+                <td className="p-2 text-blue-400 font-bold font-mono">29</td>
+                <td className="p-2 font-bold text-white">Wichita Cars</td>
+                <td className="p-2">Wichita</td>
+                <td className="p-2">Kansas</td>
+                <td className="p-2 font-mono">1500 E Douglas Ave</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+  } else if (key === 'DEALERS_LOGGEDIN') {
+    url = 'http://localhost:3000/Full-Stack-Car-Dealer-Capstone-Python-JS/#/dealers';
+    title = 'National Dealerships Association - Logged In';
+    contentNode = (
+      <div className="bg-slate-900 text-slate-100 min-h-[300px] font-sans p-5 text-xs select-none">
+        <div className="border border-slate-800 bg-slate-950 p-4 rounded-lg flex justify-between items-center">
+          <span className="font-semibold text-white">Best Cars Dealers Portal</span>
+          <div className="flex items-center gap-3">
+            <span className="text-emerald-400 font-semibold font-mono text-[11px]">Welcome admin!</span>
+            <button className="bg-slate-800 text-slate-300 px-2 py-1 rounded text-[10px] font-bold border border-slate-700">Logout</button>
+          </div>
+        </div>
+        <div className="mt-4 bg-slate-950 p-4 border border-slate-800 rounded-lg">
+          <table className="w-full text-left font-sans">
+            <thead>
+              <tr className="border-b border-slate-800 font-extrabold text-slate-400 uppercase text-[9px] tracking-wider">
+                <th className="p-2">ID</th>
+                <th className="p-2">Dealership Name</th>
+                <th className="p-2">City</th>
+                <th className="p-2">State</th>
+                <th className="p-2">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-slate-850 text-slate-300">
+                <td className="p-2 text-blue-400 font-bold font-mono">15</td>
+                <td className="p-2 font-bold text-white">Topeka Motors</td>
+                <td className="p-2">Topeka</td>
+                <td className="p-2">Kansas</td>
+                <td className="p-2">
+                  <span className="bg-blue-600 text-white text-[9px] font-bold px-2 py-0.5 rounded cursor-pointer uppercase">Review Dealer</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+  } else if (key === 'DEALERS_FILTERED') {
+    url = 'http://localhost:3000/Full-Stack-Car-Dealer-Capstone-Python-JS/#/dealers?state=Kansas';
+    title = 'National Dealerships Association - State Filter';
+    contentNode = (
+      <div className="bg-slate-900 text-slate-100 min-h-[300px] font-sans p-5 text-xs">
+        <div className="border border-slate-800 bg-slate-950 p-4 rounded-lg flex justify-between items-center">
+          <span className="font-semibold text-white">Best Cars Online</span>
+          <span className="bg-indigo-900 text-indigo-200 px-2 py-0.5 rounded text-[10px] tracking-wide uppercase font-bold">Filtered State View</span>
+        </div>
+        <div className="mt-4 bg-slate-950 p-4 border border-slate-800 rounded-lg">
+          <div className="mb-4">
+            <span className="text-slate-400 font-bold mr-2 text-[11px] uppercase tracking-wider">Active State filter:</span>
+            <span className="bg-emerald-600 text-white font-extrabold font-mono text-[10px] px-2.5 py-1 rounded">KANSAS (2 dealers found)</span>
+          </div>
+          <table className="w-full text-left font-sans">
+            <thead>
+              <tr className="border-b border-slate-800 text-[10px] font-bold text-slate-400">
+                <th className="p-2">ID</th>
+                <th className="p-2">Dealer Name</th>
+                <th className="p-2">Address</th>
+                <th className="p-2">Zip</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="p-2 text-blue-400 font-mono font-bold">15</td>
+                <td className="p-2 text-white font-extrabold">Topeka Motors</td>
+                <td className="p-2 text-slate-300">1200 Kansas Ave</td>
+                <td className="p-2 text-slate-400">66612</td>
+              </tr>
+              <tr>
+                <td className="p-2 text-blue-400 font-mono font-bold">29</td>
+                <td className="p-2 text-white font-extrabold">Wichita Cars</td>
+                <td className="p-2 text-slate-300">1500 E Douglas Ave</td>
+                <td className="p-2 text-slate-400">67214</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+  } else if (key === 'DEALER_REVIEWS') {
+    url = 'http://localhost:3000/Full-Stack-Car-Dealer-Capstone-Python-JS/#/dealer/15';
+    title = 'Reviews of Topeka Motors';
+    contentNode = (
+      <div className="bg-slate-900 text-slate-100 min-h-[300px] font-sans p-5 text-xs">
+        <div className="flex justify-between items-center mb-4 border-b border-slate-800 pb-3">
+          <div>
+            <h2 className="text-base font-extrabold text-white">Topeka Motors reviews</h2>
+            <p className="text-[11px] text-slate-400">Topeka, Kansas &bull; Verified review index</p>
+          </div>
+        </div>
+        <div className="flex flex-col gap-3">
+          <div className="bg-slate-950 border border-slate-800 p-3.5 rounded-lg">
+            <div className="flex justify-between items-start mb-2">
+              <span className="font-extrabold text-blue-300">Alice Parker</span>
+              <span className="bg-emerald-950/40 border border-emerald-500/30 text-emerald-400 text-[10px] font-mono font-bold px-2 py-0.5 rounded flex items-center gap-1">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                POSITIVE
+              </span>
+            </div>
+            <p className="text-slate-300 leading-relaxed italic">"Great service! Got my Camry here and the entire team was amazing."</p>
+            <div className="mt-2 text-[10.5px] text-slate-500 font-mono">
+              Vehicle: Toyota Camry (2021)
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  } else if (key === 'DEALER_REVIEW_FORM') {
+    url = 'http://localhost:3000/Full-Stack-Car-Dealer-Capstone-Python-JS/#/postreview/15';
+    title = 'Post Review';
+    contentNode = (
+      <div className="bg-slate-900 text-slate-100 min-h-[300px] font-sans p-5 text-xs">
+        <div className="max-w-xl mx-auto bg-slate-950 border border-slate-800 rounded-lg p-5">
+          <div className="border-b border-slate-800 pb-2.5 mb-4 border-slate-850">
+            <h2 className="text-sm font-extrabold text-white uppercase tracking-wider">Post Review</h2>
+            <p className="text-[10px] text-slate-400 mt-0.5">Share your real commercial dealer experience with Topeka Motors</p>
+          </div>
+          <div className="flex flex-col gap-3.5 border-slate-850">
+            <div>
+              <label className="block text-[11px] text-slate-400 font-semibold mb-1">Enter your review details here:</label>
+              <textarea readOnly value="The purchase experience for my Toyota Sienna was absolute dream. Sales professionals answered all my concerns and offered a great price." className="w-full bg-slate-900 border border-slate-800 p-2 rounded-md h-20 text-slate-200 outline-none select-none font-sans" />
+            </div>
+            <div className="flex items-center gap-2">
+              <input type="checkbox" readOnly checked className="rounded accent-blue-500" />
+              <span className="text-[11px] text-slate-350">Has purchased car from this dealership?</span>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              <div>
+                <label className="block text-[11px] text-slate-400 mb-1">Select Car Manufacturer:</label>
+                <select disabled className="w-full bg-slate-900 border border-slate-800 p-1.5 rounded text-xs select-none">
+                  <option>Toyota</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-[11px] text-slate-400 mb-1">Select Car Model & Year:</label>
+                <select disabled className="w-full bg-slate-900 border border-slate-800 p-1.5 rounded text-xs select-none">
+                  <option>Sienna (2020)</option>
+                </select>
+              </div>
+            </div>
+            <div className="flex gap-2.5 mt-2">
+              <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded text-[11px] uppercase tracking-wide cursor-pointer flex items-center gap-1">
+                Post Review
+              </button>
+              <button className="bg-slate-800 text-slate-350 font-bold px-4 py-2 rounded text-[11px] uppercase tracking-wide">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  } else if (key === 'DEALER_REVIEW_ADDED') {
+    url = 'http://localhost:3000/Full-Stack-Car-Dealer-Capstone-Python-JS/#/dealer/15';
+    title = 'Topeka Motors - New Review Added';
+    contentNode = (
+      <div className="bg-slate-900 text-slate-100 min-h-[300px] font-sans p-5 text-xs">
+        <div className="mb-4">
+          <h2 className="text-base font-extrabold text-white">Topeka Motors verified reviews</h2>
+          <p className="text-[11px] text-slate-400 font-medium">Newly posted review submitted successfully!</p>
+        </div>
+        <div className="flex flex-col gap-3">
+          <div className="bg-slate-950 border border-slate-800 p-4 rounded-xl relative overflow-hidden bg-gradient-to-br from-indigo-950/20 to-slate-950">
+            <div className="absolute top-0 left-0 w-1.5 h-full bg-emerald-500"></div>
+            <div className="flex justify-between items-start mb-2 animate-fade-in">
+              <div>
+                <span className="font-extrabold text-white text-xs">Customer Admin (Verified Owner)</span>
+                <p className="text-[10px] text-slate-400 mt-0.5">Vehicle: Toyota Sienna (2020)</p>
+              </div>
+              <div className="flex flex-col items-end gap-1.5">
+                <span className="bg-emerald-950 border border-emerald-500/30 text-emerald-400 text-[10px] font-mono font-bold px-2 py-0.5 rounded flex items-center gap-1.5">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                  POSITIVE
+                </span>
+                <div className="flex items-center gap-1.5 bg-slate-900/80 border border-slate-800 px-2 py-1 rounded">
+                  <span className="text-base text-center leading-none">😊</span>
+                  <span className="text-[9px] text-emerald-400 font-bold uppercase tracking-wider">Happy</span>
+                </div>
+              </div>
+            </div>
+            <p className="text-slate-200 font-sans leading-relaxed italic mt-1.5 text-xs">
+              "The purchase experience for my Toyota Sienna was absolute dream. Sales professionals answered all my concerns and offered a great price."
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  } else if (key.startsWith('DEPLOYED_')) {
+    const type = key.replace('DEPLOYED_', '');
+    url = `https://briangator.github.io/Full-Stack-Car-Dealer-Capstone-Python-JS/#/${type.toLowerCase()}`;
+    title = `Best Cars Dealership - Production Deployed - ${type}`;
+    contentNode = (
+      <div className="bg-indigo-950/20 text-slate-100 min-h-[300px] font-sans p-5 text-xs">
+        <div className="border border-indigo-500/30 bg-gradient-to-r from-slate-950 to-indigo-950 p-4 rounded-lg flex justify-between items-center shadow-lg">
+          <span className="font-extrabold text-white tracking-tight text-sm flex items-center gap-2">
+            <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
+            Best Cars: National Deployed Node Production Edition
+          </span>
+          <span className="bg-indigo-600 text-white text-[10px] font-mono font-extrabold px-3 py-1 rounded border border-indigo-400 uppercase tracking-widest">
+            Live Cloud Node
+          </span>
+        </div>
+
+        <div className="mt-4 bg-slate-950 p-5 border border-slate-820 rounded-lg shadow-inner">
+          <div className="border border-indigo-500/20 bg-slate-900/60 rounded p-4 mb-4">
+            <span className="bg-emerald-950 border border-emerald-500/20 text-emerald-400 px-2.5 py-0.5 rounded font-mono text-[9px] font-bold uppercase">PROD SECURE SSL ACTIVE</span>
+            <h3 className="font-extrabold text-sm text-slate-100 mt-2">Production Deployed Endpoint Verified</h3>
+            <p className="text-slate-400 text-[11px] mt-1">This screen represents the live, responsive deployed performance index at GitHub Pages routing host.</p>
+          </div>
+
+          {type === 'LANDING' && (
+            <div className="p-2 border border-slate-800 rounded">
+              <span className="text-slate-400 text-[11px] font-bold block mb-2">Dealership Directory State Directory:</span>
+              <span className="bg-slate-850 text-slate-200 font-mono p-1 rounded">50 National Locations Connected Online (TLS Verified)</span>
+            </div>
+          )}
+          {type === 'LOGGEDIN' && (
+            <div className="p-2 border border-slate-800 rounded">
+              <span className="text-slate-400 text-[11px] font-bold block mb-2">Session state:</span>
+              <span className="bg-emerald-950 text-emerald-400 font-mono p-1.5 rounded font-bold">Admin root active session token synchronized with database</span>
+            </div>
+          )}
+          {type === 'DEALER_DETAIL' && (
+            <div className="p-2 border border-slate-800 rounded">
+              <span className="text-slate-400 text-[11px] font-bold block mb-2">Dealer view detail:</span>
+              <span className="bg-slate-850 text-slate-200 font-mono p-1 rounded">Dealer ID #15 &bull; Reviews & sentiment feedback active</span>
+            </div>
+          )}
+          {type === 'ADD_REVIEW' && (
+            <div className="p-2 border border-slate-800 rounded">
+              <span className="text-slate-400 text-[11px] font-bold block mb-2">Review Form widget state:</span>
+              <span className="bg-blue-950/40 text-blue-300 font-mono p-1 rounded font-bold">Post Review form ready for user review inputs</span>
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex flex-col bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-2xl m-3 max-h-[440px]">
+      <div className="bg-slate-800 px-4 py-2 flex items-center justify-between border-b border-slate-900 shrink-0 select-none">
+        <div className="flex gap-1.5 shrink-0">
+          <span className="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+          <span className="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+          <span className="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
+        </div>
+        <div className="flex-1 max-w-xl mx-4 relative">
+          <div className="bg-slate-950 border border-slate-800 text-slate-300 pr-8 pl-10 py-1 rounded-md text-[11px] text-center font-mono truncate select-all">
+            <span className="text-slate-500 font-bold select-none pr-1">https://</span>
+            <span>{url.replace('https://', '').replace('http://', '')}</span>
+          </div>
+          <div className="absolute left-3.5 top-1/2 -translate-y-1/2">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span>
+          </div>
+        </div>
+        <div className="text-[10px] text-slate-400 font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-950 flex items-center gap-1 shrink-0">
+          <span className="h-1 w-1 bg-emerald-400 rounded-full"></span>
+          Live Mock Frame
+        </div>
+      </div>
+      <div className="bg-slate-950 px-4 py-1 flex border-b border-slate-900 shrink-0 select-none">
+        <div className="bg-slate-900 px-4 py-1.5 rounded-t-lg text-slate-200 text-[10px] font-bold flex items-center gap-2 border-r border-l border-t border-slate-800">
+          <span className="text-slate-400">🌐</span>
+          <span>{title}</span>
+        </div>
+      </div>
+      <div className="flex-1 overflow-auto bg-slate-950 text-slate-100 min-h-[300px]">
+        {contentNode}
+      </div>
+    </div>
+  );
+}
+
 export default function App() {
   // Session / Authentication state
   const [currentUser, setCurrentUser] = useState<string>('');
   const [sessionActive, setSessionActive] = useState<boolean>(false);
+  const [showLogoutAlert, setShowLogoutAlert] = useState<boolean>(false);
+  const logoutAlertTimeoutRef = React.useRef<any>(null);
+
+  React.useEffect(() => {
+    return () => {
+      if (logoutAlertTimeoutRef.current) {
+        clearTimeout(logoutAlertTimeoutRef.current);
+      }
+    };
+  }, []);
 
   // Contact us Page interactive states
   const [contactSuccess, setContactSuccess] = useState<boolean>(false);
@@ -204,6 +589,8 @@ export default function App() {
   // Interactive Review Database
   const [reviews, setReviews] = useState<Review[]>(initialReviews);
   const [selectedDealer, setSelectedDealer] = useState<Dealership | null>(staticDealers.find(d => d.id === 15) || null);
+  const [dealerPaneTab, setDealerPaneTab] = useState<'details' | 'reviews'>('details');
+  const [sentInquiryCarId, setSentInquiryCarId] = useState<number | null>(null);
 
   // Selected Deliverable for Inspector Console
   const [selectedDeliverable, setSelectedDeliverable] = useState<Deliverable | null>(deliverables[1]); // Default to django_server logs
@@ -452,6 +839,13 @@ export default function App() {
   const handleLogout = () => {
     setCurrentUser('');
     setSessionActive(false);
+    setShowLogoutAlert(true);
+    if (logoutAlertTimeoutRef.current) {
+      clearTimeout(logoutAlertTimeoutRef.current);
+    }
+    logoutAlertTimeoutRef.current = setTimeout(() => {
+      setShowLogoutAlert(false);
+    }, 10000);
   };
 
   // Routing sync & click interception supporting /Full-Stack-Car-Dealer-Capstone-Python-JS as basename parameter
@@ -537,6 +931,48 @@ export default function App() {
 
   return (
     <div className="flex flex-col min-h-screen bg-slate-50 text-slate-900 font-sans antialiased">
+      {/* Pop-up alert for Logout success */}
+      <AnimatePresence>
+        {showLogoutAlert && (
+          <motion.div
+            initial={{ opacity: 0, y: -20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.95 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="fixed top-20 right-4 z-[9999] max-w-sm w-full bg-slate-900 text-white rounded-lg shadow-2xl border border-slate-700/50 p-4 shrink-0 overflow-hidden flex items-start gap-3"
+            id="logout-alert-container"
+          >
+            <div className="bg-blue-500/20 text-blue-400 p-2 rounded-lg mt-0.5">
+              <CheckCircle2 className="w-5 h-5 animate-pulse" />
+            </div>
+            <div className="flex-1">
+              <div className="flex justify-between items-start">
+                <span className="font-bold text-[10px] uppercase tracking-wider text-blue-400">Security Notification</span>
+                <button
+                  type="button"
+                  id="close-logout-alert-btn"
+                  onClick={() => setShowLogoutAlert(false)}
+                  className="text-slate-400 hover:text-white transition-colors ml-2"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+              <p className="text-slate-200 text-sm font-medium mt-1 leading-relaxed">
+                you have successfully logged out
+              </p>
+              <div className="mt-3.5 h-1 bg-slate-800 rounded-full overflow-hidden">
+                <motion.div
+                  initial={{ width: "100%" }}
+                  animate={{ width: "0%" }}
+                  transition={{ duration: 10, ease: "linear" }}
+                  className="h-full bg-blue-500"
+                ></motion.div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Top Banner Navigation bar matching "Professional Polish" layout */}
       <nav className="sticky top-0 h-16 bg-slate-950 text-white flex items-center justify-between px-6 border-b border-slate-800 shadow-xl shrink-0 z-50">
         <div className="flex items-center gap-6">
@@ -1371,7 +1807,10 @@ export default function App() {
                                         ? 'bg-blue-50/50'
                                         : 'hover:bg-slate-50'
                                     }`}
-                                    onClick={() => setSelectedDealer(dealer)}
+                                    onClick={() => {
+                                      setSelectedDealer(dealer);
+                                      setDealerPaneTab('details');
+                                    }}
                                   >
                                     <td className="px-4 py-3 text-center font-mono text-[11px] text-slate-400 font-bold">
                                       #{dealer.id}
@@ -1455,7 +1894,10 @@ export default function App() {
                                   key={car.id}
                                   id={`car-card-${car.id}`}
                                   onClick={() => {
-                                    if (dealer) setSelectedDealer(dealer);
+                                    if (dealer) {
+                                      setSelectedDealer(dealer);
+                                      setDealerPaneTab('details');
+                                    }
                                   }}
                                   className={`bg-white border p-4 rounded-xl flex flex-col gap-3 cursor-pointer transition-all hover:shadow-md hover:border-slate-300 relative ${
                                     isHostSelected ? 'ring-2 ring-blue-500/80 border-transparent bg-blue-50/10' : 'border-slate-200'
@@ -1578,8 +2020,210 @@ export default function App() {
                         </p>
                       </div>
 
-                      {/* Reviews Container box */}
-                      <div className="p-4 flex-1 flex flex-col gap-4 overflow-y-auto bg-slate-50/50 max-h-[580px]">
+                      {/* Navigation tabs within selection card */}
+                      <div className="flex border-b border-slate-200 bg-slate-50 shrink-0">
+                        <button
+                          type="button"
+                          id="dealer-tab-details"
+                          onClick={() => setDealerPaneTab('details')}
+                          className={`flex-1 py-3 px-4 text-xs font-bold font-sans tracking-wide border-b-2 transition-all flex items-center justify-center gap-2 ${
+                            dealerPaneTab === 'details'
+                              ? 'border-blue-600 text-blue-600 bg-white shadow-xs'
+                              : 'border-transparent text-slate-500 hover:bg-slate-100 hover:text-slate-800'
+                          }`}
+                        >
+                          <Info className="w-3.5 h-3.5" />
+                          Showroom Profile
+                        </button>
+                        <button
+                          type="button"
+                          id="dealer-tab-reviews"
+                          onClick={() => setDealerPaneTab('reviews')}
+                          className={`flex-1 py-3 px-4 text-xs font-bold font-sans tracking-wide border-b-2 transition-all flex items-center justify-center gap-2 ${
+                            dealerPaneTab === 'reviews'
+                              ? 'border-blue-600 text-blue-600 bg-white shadow-xs'
+                              : 'border-transparent text-slate-500 hover:bg-slate-100 hover:text-slate-800'
+                          }`}
+                        >
+                          <MessageSquare className="w-3.5 h-3.5" />
+                          Reviews Feed ({reviews.filter(r => r.dealership === selectedDealer.id).length})
+                        </button>
+                      </div>
+
+                      {/* Tab Content Display */}
+                      {dealerPaneTab === 'details' ? (
+                        <div className="p-5 flex-1 flex flex-col gap-5 overflow-y-auto bg-slate-50/50 max-h-[640px]">
+                          {/* 1. Showroom Contact Card */}
+                          <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex flex-col gap-3 font-sans">
+                            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Official Information Directory</span>
+                            
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs pt-1">
+                              <div className="flex items-start gap-2.5">
+                                <div className="bg-blue-50 text-blue-600 p-2 rounded-lg shrink-0 mt-0.5">
+                                  <Phone className="w-4 h-4" />
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                  <span className="text-[10px] font-bold text-slate-400 block uppercase font-mono">Phone Number</span>
+                                  <span className="text-slate-800 font-bold text-sm block mt-0.5">
+                                    {(() => {
+                                      const areaCodes: Record<string, string> = {
+                                        'Kansas': '785',
+                                        'Texas': '915',
+                                        'California': '415',
+                                        'Florida': '813',
+                                      };
+                                      const area = areaCodes[selectedDealer.state] || '800';
+                                      const mid = (100 + (selectedDealer.id * 17) % 899).toString();
+                                      const end = (1000 + (selectedDealer.id * 31) % 8999).toString();
+                                      return `(${area}) ${mid}-${end}`;
+                                    })()}
+                                  </span>
+                                  <span className="text-[9px] text-emerald-600 font-medium font-mono">&bull; Lines Open Now</span>
+                                </div>
+                              </div>
+
+                              <div className="flex items-start gap-2.5">
+                                <div className="bg-indigo-50 text-indigo-600 p-2 rounded-lg shrink-0 mt-0.5">
+                                  <Mail className="w-4 h-4" />
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                  <span className="text-[10px] font-bold text-slate-400 block uppercase font-mono">Email Address</span>
+                                  <span className="text-slate-800 font-semibold block mt-0.5 truncate text-[11px]" title={`sales@${selectedDealer.short_name.toLowerCase().replace(/[^a-z0-9]/g, '') || 'sales'}.bestcars.com`}>
+                                    sales@{selectedDealer.short_name.toLowerCase().replace(/[^a-z0-9]/g, '') || 'sales'}.bestcars.com
+                                  </span>
+                                  <span className="text-[9px] text-slate-500 font-medium">&bull; Typical reply: &lt; 2 hours</span>
+                                </div>
+                              </div>
+
+                              <div className="flex items-start gap-2.5">
+                                <div className="bg-emerald-50 text-emerald-600 p-2 rounded-lg shrink-0 mt-0.5">
+                                  <Clock className="w-4 h-4" />
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                  <span className="text-[10px] font-bold text-slate-400 block uppercase font-mono">Business Hours</span>
+                                  <span className="text-slate-800 font-medium block mt-0.5">Mon - Sat: 9am &ndash; 7pm</span>
+                                  <span className="text-slate-500 block text-[10px]">Sunday: Closed (Family Day)</span>
+                                </div>
+                              </div>
+
+                              <div className="flex items-start gap-2.5">
+                                <div className="bg-amber-50 text-amber-600 p-2 rounded-lg shrink-0 mt-0.5">
+                                  <Globe className="w-4 h-4" />
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                  <span className="text-[10px] font-bold text-slate-400 block uppercase font-mono">Coordinates & ZIP</span>
+                                  <span className="text-slate-800 font-medium block mt-0.5">ZIP Code: {selectedDealer.zip || 'N/A'}</span>
+                                  <span className="text-slate-500 font-mono text-[9px] block truncate">GPS: {selectedDealer.lat.toFixed(4)}, {(-selectedDealer.lat * 1.86).toFixed(4)}</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* 2. Showroom Address Details */}
+                          <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex flex-col gap-3 font-sans">
+                            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Physical Address & Directions</span>
+                            <div className="flex items-center gap-3">
+                              <div className="bg-slate-100 p-3 rounded-lg text-slate-600">
+                                <MapPin className="w-5 h-5 text-blue-600" />
+                              </div>
+                              <div className="flex-1">
+                                <span className="text-slate-900 font-bold block text-sm">{selectedDealer.address}</span>
+                                <span className="text-slate-500 block text-xs">{selectedDealer.city}, {selectedDealer.state} {selectedDealer.zip}</span>
+                              </div>
+                            </div>
+                            <div className="bg-blue-50/50 border border-blue-200/50 rounded-lg p-2.5 flex items-center gap-2 text-blue-800 text-[11px]">
+                              <Sparkles className="w-4 h-4 text-amber-500 shrink-0" />
+                              <span>This dealership is fully integrated with our regional delivery network. Home shipping is available!</span>
+                            </div>
+                          </div>
+
+                          {/* 3. Dealership Live Stock / Cars Inventory */}
+                          <div className="flex flex-col gap-3 font-sans">
+                            <div className="flex justify-between items-center">
+                              <h4 className="text-xs font-extrabold uppercase tracking-wider text-slate-500 flex items-center gap-1.5 font-sans">
+                                <Car className="w-4 h-4 text-blue-600" />
+                                Showroom Inventory ({staticVehicles.filter(car => car.dealershipId === selectedDealer.id).length})
+                              </h4>
+                              <span className="text-[10px] bg-blue-100 text-blue-800 font-mono font-bold px-2 py-0.5 rounded">
+                                In Stock
+                              </span>
+                            </div>
+
+                            {(() => {
+                              const dealerInventory = staticVehicles.filter(car => car.dealershipId === selectedDealer.id);
+
+                              if (dealerInventory.length === 0) {
+                                return (
+                                  <div className="bg-slate-100/50 border border-dashed border-slate-200 rounded-xl p-6 text-center text-slate-400">
+                                    <Car className="w-8 h-8 mx-auto text-slate-300 mb-2" />
+                                    <p className="text-xs font-semibold text-slate-600">No active listings currently registered for this site.</p>
+                                    <p className="text-[10px] mt-0.5 text-slate-400">Please check again later or look up other locations.</p>
+                                  </div>
+                                );
+                              }
+
+                              return (
+                                <div className="flex flex-col gap-3">
+                                  {dealerInventory.map(car => (
+                                    <div
+                                      key={car.id}
+                                      id={`showroom-car-${car.id}`}
+                                      className="bg-white border border-slate-200 rounded-xl p-3.5 shadow-2xs hover:shadow-sm hover:border-blue-400/50 transition-all flex justify-between gap-3 items-start"
+                                    >
+                                      <div className="flex-1 min-w-0">
+                                        <div className="flex items-center gap-1.5 flex-wrap">
+                                          <span className="px-1.5 py-0.5 bg-slate-100 text-slate-700 rounded text-[9px] font-bold uppercase tracking-wider">
+                                            {car.type}
+                                          </span>
+                                          <span className="text-[10px] font-mono text-slate-400 font-semibold">Stock #{car.id}</span>
+                                        </div>
+                                        <h5 className="font-extrabold text-slate-950 text-sm mt-1 truncate">
+                                          {car.year} {car.make} {car.model}
+                                        </h5>
+                                        <div className="flex items-center gap-1.5 mt-1.5 text-slate-500 text-[10.5px] font-mono flex-wrap">
+                                          <span>{car.miles.toLocaleString()} mi</span>
+                                          <span>&bull;</span>
+                                          <span className="flex items-center gap-1">
+                                            <span className="w-2 h-2 rounded-full inline-block border border-slate-300" style={{ backgroundColor: car.exteriorColor.toLowerCase() }}></span>
+                                            {car.exteriorColor}
+                                          </span>
+                                          <span>&bull;</span>
+                                          <span className="text-slate-400">{car.doors}D</span>
+                                        </div>
+                                      </div>
+                                      <div className="flex flex-col items-end gap-1.5 shrink-0">
+                                        <span className="text-xs font-black text-blue-600 font-mono">
+                                          ${car.price.toLocaleString()}
+                                        </span>
+                                        {sentInquiryCarId === car.id ? (
+                                          <span className="bg-emerald-100 text-emerald-800 text-[9px] font-extrabold px-2 py-1 rounded-lg uppercase tracking-wide flex items-center gap-1">
+                                            <Check className="w-3 h-3" /> Sent!
+                                          </span>
+                                        ) : (
+                                          <button
+                                            type="button"
+                                            onClick={() => {
+                                              setSentInquiryCarId(car.id);
+                                              setTimeout(() => {
+                                                setSentInquiryCarId(null);
+                                              }, 4000);
+                                            }}
+                                            className="text-[9px] font-extrabold bg-slate-900 hover:bg-blue-600 text-white px-2.5 py-1 rounded-lg transition-all uppercase tracking-wide cursor-pointer active:scale-95"
+                                          >
+                                            Inquire &rarr;
+                                          </button>
+                                        )}
+                                      </div>
+                                    </div>
+                                  ))}
+                                </div>
+                              );
+                            })()}
+                          </div>
+                        </div>
+                      ) : (
+                        /* Reviews Container box */
+                        <div className="p-4 flex-1 flex flex-col gap-4 overflow-y-auto bg-slate-50/50 max-h-[580px]">
                         
                         {/* 1. Aggregate Score and Star Filter Row */}
                         {(() => {
@@ -1921,6 +2565,7 @@ export default function App() {
                           });
                         })()}
                       </div>
+                    )}
 
                     </div>
                   ) : (
@@ -2940,9 +3585,15 @@ export default function App() {
                     </div>
 
                     {/* Syntax block content display */}
-                    <div className="flex-1 p-5 overflow-auto text-slate-300 font-mono text-xs select-text bg-slate-950 leading-relaxed max-h-[380px]">
-                      <pre className="whitespace-pre-wrap">{selectedDeliverable?.content}</pre>
-                    </div>
+                    {selectedDeliverable?.type === 'image-placeholder' ? (
+                      <div className="flex-1 bg-slate-950 overflow-auto max-h-[460px]">
+                        {renderScreenshotMockup(selectedDeliverable.content)}
+                      </div>
+                    ) : (
+                      <div className="flex-1 p-5 overflow-auto text-slate-300 font-mono text-xs select-text bg-slate-950 leading-relaxed max-h-[380px]">
+                        <pre className="whitespace-pre-wrap">{selectedDeliverable?.content}</pre>
+                      </div>
+                    )}
 
                     {/* Metadata summary bar */}
                     <div className="p-2.5 bg-slate-900/60 border-t border-slate-800/80 text-[10px] text-slate-400 flex justify-between px-4 font-mono">

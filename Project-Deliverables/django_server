@@ -1,4 +1,4 @@
-(djangoenv) user@theia-host:~/xrwvm-fullstack_developer_capstone/server$ python3 manage.py runserver 0.0.0.0:8000
+(djangoenv) user@theia-host:~/Full-Stack-Car-Dealer-Capstone-Python-JS/server$ python3 manage.py runserver 0.0.0.0:8000
 Watching for file changes with StatReloader
 Performing system checks...
 

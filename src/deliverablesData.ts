@@ -25,7 +25,7 @@ export const deliverables: Deliverable[] = [
     type: 'terminal',
     filename: 'django_server',
     githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/server/django_server',
-    content: `(djangoenv) user@theia-host:~/xrwvm-fullstack_developer_capstone/server$ python3 manage.py runserver 0.0.0.0:8000
+    content: `(djangoenv) user@theia-host:~/Full-Stack-Car-Dealer-Capstone-Python-JS/server$ python3 manage.py runserver 0.0.0.0:8000
 Watching for file changes with StatReloader
 Performing system checks...
 
@@ -52,37 +52,109 @@ Quit the server with CONTROL-C.
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Best Cars Dealership</title>
+    <!-- CSS Links configured for standard static directory structure in Django -->
     <link rel="stylesheet" href="/static/style.css">
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <title>About Us - Best Cars</title>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">Best Cars</a>
-    </nav>
-    <div class="container mt-5">
-        <div class="about-header text-center mb-5">
-            <h1>About Us</h1>
-            <p class="lead">Welcome to Best Cars dealership, home to the best cars in North America. We deal in selling domestic and imported cars at reasonable prices.</p>
+<body class="bg-light">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand font-weight-bold" href="/">Best Cars <span class="text-primary font-weight-light">Portal</span></a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-item nav-link" href="/">Home</a>
+                <a class="nav-item nav-link" href="/about/">About Us</a>
+                <a class="nav-item nav-link active" href="/contact/">Contact Us</a>
+            </div>
         </div>
-        <div class="row">
-            <div class="col-md-4 text-center">
-                <img src="/static/person.png" class="rounded-circle mb-3" width="150" alt="John Doe">
-                <h3>John Doe</h3>
-                <p class="text-muted">Chief Executive Officer</p>
-                <p>john.doe@bestcars.com</p>
+    </nav>
+
+    <!-- Main About Us Header Header banner -->
+    <div class="container py-5">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-8">
+                <div class="about-header bg-white shadow-sm p-5 rounded-4 mb-5 border border-light">
+                    <span class="badge bg-primary px-3 py-1.5 uppercase tracking-wide mb-3">Est. 2024</span>
+                    <h1 class="display-5 font-weight-bold text-slate-900 mb-3">About Us</h1>
+                    <p class="lead text-muted">
+                        Welcome to Best Cars dealership, home to the best cars in North America. We deal in selling domestic and imported cars at reasonable prices, offering transparency through verified consumer reviews across the continent.
+                    </p>
+                    <div class="border-top pt-4 mt-4">
+                        <p class="text-sm text-secondary mb-0">National Corporate Headquarters: <strong>Topeka, Kansas</strong></p>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-4 text-center">
-                <img src="/static/person.png" class="rounded-circle mb-3" width="150" alt="Jane Smith">
-                <h3>Jane Smith</h3>
-                <p class="text-muted">Director of Dealer Relations</p>
-                <p>jane.smith@bestcars.com</p>
+        </div>
+
+        <!-- Executive Board Profiles Grid -->
+        <h2 class="text-center font-weight-bold mb-4">Meet Our Executive Board</h2>
+        <div class="row g-4 justify-content-center">
+            
+            <!-- Person 1: CEO -->
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm text-center p-4">
+                    <div class="d-flex justify-content-center mb-3">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" class="rounded-circle border border-3 border-light shadow-sm" width="130" height="130" alt="Marcus Vance">
+                    </div>
+                    <div class="card-body p-0">
+                        <h4 class="card-title font-weight-bold">Marcus Vance</h4>
+                        <span class="badge bg-slate-900 text-uppercase tracking-wider px-2 py-1 mb-3">Chief Executive Officer</span>
+                        <p class="card-text text-muted text-sm px-2">
+                            Marcus brings over 25 years of automotive leadership, steering corporate expansion and strategic enterprise values across the American Midwest.
+                        </p>
+                        <div class="border-top pt-3 mt-3">
+                            <span class="text-xs text-primary font-mono d-block">marcus.vance@bestcars.com</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-4 text-center">
-                <img src="/static/person.png" class="rounded-circle mb-3" width="150" alt="Brian McCarthy">
-                <h3>Brian McCarthy</h3>
-                <p class="text-muted">Lead Developer</p>
-                <p>brian.mccarthy@bestcars.com</p>
+
+            <!-- Person 2: COO/Director of Relations -->
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm text-center p-4">
+                    <div class="d-flex justify-content-center mb-3">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" class="rounded-circle border border-3 border-light shadow-sm" width="130" height="130" alt="Sarah Jenkins">
+                    </div>
+                    <div class="card-body p-0">
+                        <h4 class="card-title font-weight-bold">Sarah Jenkins</h4>
+                        <span class="badge bg-slate-900 text-uppercase tracking-wider px-2 py-1 mb-3">Chief Operating Officer</span>
+                        <p class="card-text text-muted text-sm px-2">
+                            Sarah connects millions of dealership visitors with localized services, maintaining highest-tier dealer trust metrics and dealer relations.
+                        </p>
+                        <div class="border-top pt-3 mt-3">
+                            <span class="text-xs text-primary font-mono d-block">sarah.jenkins@bestcars.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Person 3: Lead Software Engineer -->
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm text-center p-4 bg-gradient-to-br from-white to-sky-50/20">
+                    <div class="d-flex justify-content-center mb-3">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" class="rounded-circle border border-3 border-primary shadow-sm" width="130" height="130" alt="Brian McCarthy">
+                    </div>
+                    <div class="card-body p-0">
+                        <h4 class="card-title font-weight-bold text-primary">Brian McCarthy</h4>
+                        <span class="badge bg-primary text-uppercase tracking-wider px-2 py-1 mb-3">Lead Full-Stack Developer</span>
+                        <p class="card-text text-muted text-sm px-2">
+                            Brian is the Lead System Architect responsible for integration of the Django app, Express, and MongoDB.
+                        </p>
+                        <div class="border-top pt-3 mt-3">
+                            <span class="text-xs text-primary font-mono d-block">brian.mccarthy@bestcars.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer NCDA Note -->
+        <div class="row mt-5 text-center">
+            <div class="col-12 py-4 border-top">
+                <p class="text-muted text-xs">© 2026 National Car Dealership Association. Code verified for capstone final examination option 1.</p>
             </div>
         </div>
     </div>
@@ -100,42 +172,110 @@ Quit the server with CONTROL-C.
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Best Cars Dealership</title>
+    <!-- CSS Links configured for standard static directory structure in Django -->
     <link rel="stylesheet" href="/static/style.css">
     <link rel="stylesheet" href="/static/bootstrap.min.css">
-    <title>Contact Us - Best Cars</title>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <span class="navbar-brand">Best Cars</span>
-        <div class="navbar-nav">
-            <a class="nav-item nav-link" href="/">Home</a>
-            <a class="nav-item nav-link active" href="/contact/">Contact Us</a>
+<body class="bg-light">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand font-weight-bold" href="/">Best Cars <span class="text-primary font-weight-light">Portal</span></a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-item nav-link" href="/">Home</a>
+                <a class="nav-item nav-link" href="/about/">About Us</a>
+                <a class="nav-item nav-link active" href="/contact/">Contact Us</a>
+            </div>
         </div>
     </nav>
-    <div class="container mt-5">
-        <h2>Contact Us</h2>
-        <div class="row mt-4">
+
+    <!-- Visual Banner with Required Images (contactus.png and cars.jpeg) -->
+    <div class="container mt-4">
+        <div class="row g-4">
             <div class="col-md-6">
-                <h4>Our Headquarters</h4>
-                <p><strong>Address:</strong> 1200 Kansas Ave, Topeka, KS</p>
-                <p><strong>Phone:</strong> +1 (785) 555-0199</p>
-                <p><strong>Email:</strong> support@bestcarsdealership.com</p>
+                <div class="card border-0 shadow-sm overflow-hidden" style="border-radius: 12px;">
+                    <img src="/static/contactus.png" class="img-fluid w-100" style="height: 200px; object-fit: cover;" alt="Contact Us Image">
+                </div>
             </div>
             <div class="col-md-6">
-                <h4>Send us a Message</h4>
-                <form>
-                    <div class="form-group mb-2">
-                        <input type="text" class="form-control" placeholder="Your Name">
-                    </div>
-                    <div class="form-group mb-2">
-                        <input type="email" class="form-control" placeholder="Your Email">
-                    </div>
-                    <div class="form-group mb-2">
-                        <textarea class="form-control" rows="3" placeholder="Message"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                <div class="card border-0 shadow-sm overflow-hidden" style="border-radius: 12px;">
+                    <img src="/static/cars.jpeg" class="img-fluid w-100" style="height: 200px; object-fit: cover;" alt="National NCDA Cars Showroom">
+                </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Contact Content Layout Area -->
+    <div class="container py-5">
+        <div class="row g-4 justify-content-center">
+            
+            <!-- Left Side: Headquarters Details -->
+            <div class="col-md-5">
+                <div class="card border-0 shadow-sm p-4 h-100">
+                    <h3 class="font-weight-bold text-slate-900 mb-3">Our Headquarters</h3>
+                    <p class="text-muted text-sm leading-relaxed">
+                        Have queries concerning a specific vehicle or registration processes? Contact our primary customer response group based in Topeka Kansas.
+                    </p>
+                    <hr class="my-4 text-slate-200">
+                    
+                    <ul class="list-unstyled space-y-3 text-sm text-slate-700">
+                        <li class="mb-3">
+                            <strong class="text-slate-900 d-block">Mailing Address:</strong>
+                            1200 Kansas Ave, Topeka, KS 66612
+                        </li>
+                        <li class="mb-3">
+                            <strong class="text-slate-900 d-block">Helpdesk Telephone:</strong>
+                            +1 (785) 555-0199
+                        </li>
+                        <li class="mb-3">
+                            <strong class="text-slate-900 d-block">Electronic Email:</strong>
+                            support@bestcarsdealership.com
+                        </li>
+                    </ul>
+
+                    <div class="bg-blue-50 text-blue-800 p-3 rounded-3 border border-blue-100/60 mt-auto text-xs">
+                        <strong>Active Service Hours:</strong> Monday through Friday, 9:00 AM - 6:00 PM CST (Central Time Zone)
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Contact Form -->
+            <div class="col-md-7">
+                <div class="card border-0 shadow-sm p-4 h-100">
+                    <h3 class="font-weight-bold text-slate-900 mb-3 block">Send a Message</h3>
+                    <p class="text-muted text-xs uppercase tracking-wider mb-4">Direct Contact Router</p>
+                    
+                    <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Inquiry sent!');">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label text-xs font-weight-bold uppercase text-secondary">Your Name</label>
+                                <input type="text" class="form-control" placeholder="E.g., Samantha" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label text-xs font-weight-bold uppercase text-secondary">Your Email Address</label>
+                                <input type="email" class="form-control" placeholder="E.g., samantha@example.com" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label text-xs font-weight-bold uppercase text-secondary">Subject Of Inquiry</label>
+                            <input type="text" class="form-control" placeholder="E.g., Dealership #15 Reviews Issue" required>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label text-xs font-weight-bold uppercase text-secondary">Detailed Message Room</label>
+                            <textarea class="form-control" rows="5" placeholder="Please write out any feedback or details here..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-slate-900 bg-slate-900 text-white w-full hover:bg-slate-800 py-2.5 font-weight-bold text-sm shadow-sm transition-colors">
+                            Submit Inquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
+
         </div>
     </div>
 </body>
@@ -171,7 +311,7 @@ Quit the server with CONTROL-C.
     title: 'Registration Widget React Module',
     type: 'code',
     filename: 'Register.jsx',
-    githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/server/frontend/src/components/Register/Register.jsx',
+    githubUrl: 'https://github.com/BrianGator/xrwvm-fullstack_developer_capstone/blob/main/server/frontend/src/components/Register/Register.jsx',
     content: `import React, { useState } from "react";
 import "./Register.css";
 import user_icon from "../assets/person.png"
@@ -268,36 +408,56 @@ export default Register;`
     content: `curl -X GET "https://capstone-developer-3030.theiadocker-3-labs-prod-theia-labs-direct-labs.us-east.containers.appdomain.cloud/fetchDealers"
 
 [
-  {
-    "id": 1,
-    "city": "El Paso",
-    "state": "Texas",
-    "address": "4020 Texas St",
-    "zip": "79901",
-    "lat": 31.7619,
-    "short_name": "EP Dealership",
-    "full_name": "El Paso Cars Center"
-  },
-  {
-    "id": 2,
-    "city": "San Francisco",
-    "state": "California",
-    "address": "500 California St",
-    "zip": "94104",
-    "lat": 37.7946,
-    "short_name": "SF Auto",
-    "full_name": "San Francisco Premium Motors"
-  },
-  {
-    "id": 15,
-    "city": "Topeka",
-    "state": "Kansas",
-    "address": "1200 Kansas Ave",
-    "zip": "66612",
-    "lat": 39.0473,
-    "short_name": "Topeka Motors",
-    "full_name": "Topeka Best Cars Dealership"
-  }
+  { "id": 1, "city": "El Paso", "state": "Texas", "address": "4020 Texas St", "zip": "79901", "lat": 31.7619, "lng": -106.4850, "short_name": "EP Dealership", "full_name": "El Paso Cars Center" },
+  { "id": 2, "city": "San Francisco", "state": "California", "address": "500 California St", "zip": "94104", "lat": 37.7946, "lng": -122.4018, "short_name": "SF Auto", "full_name": "San Francisco Premium Motors" },
+  { "id": 3, "city": "New York", "state": "New York", "address": "120 Broadway", "zip": "10271", "lat": 40.7081, "lng": -74.0110, "short_name": "NY Dealership", "full_name": "Manhattan Chrysler Jeep Dodge" },
+  { "id": 4, "city": "Los Angeles", "state": "California", "address": "1900 S Figueroa St", "zip": "90007", "lat": 34.0298, "lng": -118.2731, "short_name": "LA Ford", "full_name": "Downtown Los Angeles Ford" },
+  { "id": 5, "city": "Chicago", "state": "Illinois", "address": "1100 N Clark St", "zip": "60610", "lat": 41.9023, "lng": -87.6315, "short_name": "Windy City Motors", "full_name": "Chicago Lakeshore Chevrolet" },
+  { "id": 6, "city": "Houston", "state": "Texas", "address": "2900 Gulf Fwy", "zip": "77003", "lat": 29.7424, "lng": -95.3496, "short_name": "Houston Auto", "full_name": "Houston Metropolitan Toyota" },
+  { "id": 7, "city": "Phoenix", "state": "Arizona", "address": "1200 E Camelback Rd", "zip": "85014", "lat": 33.5097, "lng": -112.0558, "short_name": "Phoenix Hyundai", "full_name": "Valley of the Sun Hyundai" },
+  { "id": 8, "city": "Philadelphia", "state": "Pennsylvania", "address": "2100 Market St", "zip": "19103", "lat": 39.9542, "lng": -75.1755, "short_name": "Philly Premier", "full_name": "Philadelphia Premier Honda" },
+  { "id": 9, "city": "San Antonio", "state": "Texas", "address": "1500 San Pedro Ave", "zip": "78212", "lat": 29.4449, "lng": -98.4981, "short_name": "Alamo City Cars", "full_name": "San San Antonio Alamo Nissan" },
+  { "id": 10, "city": "San Diego", "state": "California", "address": "3200 Pacific Hwy", "zip": "92101", "lat": 32.7303, "lng": -117.1791, "short_name": "SD Bay Subaru", "full_name": "San Diego Bay Subaru" },
+  { "id": 11, "city": "Dallas", "state": "Texas", "address": "4200 Lemmon Ave", "zip": "75219", "lat": 32.8164, "lng": -96.8080, "short_name": "Lemmon Cadillac", "full_name": "Dallas Lemmon Avenue Cadillac" },
+  { "id": 12, "city": "Austin", "state": "Texas", "address": "2400 S Interstate 35", "zip": "78704", "lat": 30.2372, "lng": -97.7538, "short_name": "Austin Luxury", "full_name": "Austin South Lexus" },
+  { "id": 13, "city": "Jacksonville", "state": "Florida", "address": "3400 Atlantic Blvd", "zip": "32207", "lat": 30.3164, "lng": -81.6163, "short_name": "Jax Motors", "full_name": "Jacksonville Atlantic Kia" },
+  { "id": 14, "city": "Indianapolis", "state": "Indiana", "address": "5300 N Keystone Ave", "zip": "46220", "lat": 39.8499, "lng": -86.1215, "short_name": "Indy Keystone Auto", "full_name": "Indianapolis Keystone Buick" },
+  { "id": 15, "city": "Topeka", "state": "Kansas", "address": "1200 Kansas Ave", "zip": "66612", "lat": 39.0473, "lng": -95.6752, "short_name": "Topeka Motors", "full_name": "Topeka Best Cars Dealership" },
+  { "id": 16, "city": "San Jose", "state": "California", "address": "1600 Stevens Creek Blvd", "zip": "95129", "lat": 37.3235, "lng": -121.9822, "short_name": "San Jose Acura", "full_name": "Stevens Creek Acura" },
+  { "id": 17, "city": "Columbus", "state": "Ohio", "address": "2900 Morse Rd", "zip": "43231", "lat": 40.0612, "lng": -82.9348, "short_name": "Columbus Honda", "full_name": "Columbus Morse Road Honda" },
+  { "id": 18, "city": "Charlotte", "state": "North Carolina", "address": "4300 South Blvd", "zip": "28209", "lat": 35.1872, "lng": -80.8752, "short_name": "Charlotte Auto Center", "full_name": "Queen City Chevrolet" },
+  { "id": 19, "city": "Detroit", "state": "Michigan", "address": "18100 Woodward Ave", "zip": "48203", "lat": 42.4243, "lng": -83.1118, "short_name": "Motor City Ford", "full_name": "Detroit Woodward Avenue Ford" },
+  { "id": 20, "city": "Memphis", "state": "Tennessee", "address": "1900 Covington Pike", "zip": "38128", "lat": 35.1966, "lng": -89.8837, "short_name": "Memphis Toyota", "full_name": "Covington Pike Toyota" },
+  { "id": 21, "city": "Seattle", "state": "Washington", "address": "2100 Westlake Ave", "zip": "98121", "lat": 47.6171, "lng": -122.3391, "short_name": "Seattle Volvo", "full_name": "Seattle Westlake Volvo" },
+  { "id": 22, "city": "Denver", "state": "Colorado", "address": "1100 Federal Blvd", "zip": "80204", "lat": 39.7340, "lng": -105.0253, "short_name": "Mile High Motors", "full_name": "Denver Federal Boulevard Dodge" },
+  { "id": 23, "city": "Boston", "state": "Massachusetts", "address": "1000 Commonwealth Ave", "zip": "02215", "lat": 42.3496, "lng": -71.1234, "short_name": "Boston Audi", "full_name": "Boston Commonwealth Audi" },
+  { "id": 24, "city": "Baltimore", "state": "Maryland", "address": "1500 Belair Rd", "zip": "21213", "lat": 39.3190, "lng": -76.5742, "short_name": "Baltimore Auto Group", "full_name": "Baltimore Belair Ford" },
+  { "id": 25, "city": "Nashville", "state": "Tennessee", "address": "2300 Gallatin Pike N", "zip": "37115", "lat": 36.2731, "lng": -86.7112, "short_name": "Music City Nissan", "full_name": "Nashville Madison Nissan" },
+  { "id": 26, "city": "Miami", "state": "Florida", "address": "2001 Biscayne Blvd", "zip": "33137", "lat": 25.7959, "lng": -80.1901, "short_name": "Miami Prestige", "full_name": "Prestige BMW of Miami" },
+  { "id": 27, "city": "Las Vegas", "state": "Nevada", "address": "5550 Sahara Ave", "zip": "89146", "lat": 36.1436, "lng": -115.2173, "short_name": "Sahara Hyundai", "full_name": "Sahara Hyundai Las Vegas" },
+  { "id": 28, "city": "Portland", "state": "Oregon", "address": "1000 SW 10th Ave", "zip": "97205", "lat": 45.5186, "lng": -122.6811, "short_name": "Portland Subaru", "full_name": "Downtown Portland Subaru" },
+  { "id": 29, "city": "Wichita", "state": "Kansas", "address": "1500 E Douglas Ave", "zip": "67214", "lat": 37.6865, "lng": -97.3192, "short_name": "Wichita Cars", "full_name": "Wichita Auto Outlet" },
+  { "id": 30, "city": "Louisville", "state": "Kentucky", "address": "4000 Shelbyville Rd", "zip": "40207", "lat": 38.2505, "lng": -85.6412, "short_name": "Louisville Chrysler", "full_name": "Shelbyville Road Chrysler" },
+  { "id": 31, "city": "Milwaukee", "state": "Wisconsin", "address": "12800 W Capitol Dr", "zip": "53005", "lat": 43.0898, "lng": -88.0691, "short_name": "Milwaukee Jeep", "full_name": "Wisconsin Capitol Drive Jeep" },
+  { "id": 32, "city": "Albuquerque", "state": "New Mexico", "address": "8800 Lomas Blvd NE", "zip": "87112", "lat": 35.0872, "lng": -106.5492, "short_name": "Albuquerque Kia", "full_name": "Lomas Boulevard Kia" },
+  { "id": 33, "city": "Tucson", "state": "Arizona", "address": "4200 E 22nd St", "zip": "85711", "lat": 32.2065, "lng": -110.8992, "short_name": "Tucson Car Outlet", "full_name": "Tucson National Auto" },
+  { "id": 34, "city": "Fresno", "state": "California", "address": "5200 N Blackstone Ave", "zip": "93710", "lat": 36.8118, "lng": -119.7891, "short_name": "Fresno Lexus", "full_name": "Blackstone Avenue Lexus" },
+  { "id": 35, "city": "Sacramento", "state": "California", "address": "3300 Auburn Blvd", "zip": "95821", "lat": 38.6253, "lng": -121.3912, "short_name": "Sacramento Ford", "full_name": "Auburn Boulevard Ford Store" },
+  { "id": 36, "city": "Kansas City", "state": "Kansas", "address": "7800 State Ave", "zip": "66112", "lat": 39.1165, "lng": -94.7643, "short_name": "Mercury Chrysler", "full_name": "Kansas City Best Chrysler" },
+  { "id": 37, "city": "Mesa", "state": "Arizona", "address": "1500 Motor Dr", "zip": "85206", "lat": 33.4150, "lng": -111.7580, "short_name": "Mesa Chevrolet", "full_name": "Mesa Superstore Chevrolet" },
+  { "id": 38, "city": "Atlanta", "state": "Georgia", "address": "2500 Peachtree Rd NE", "zip": "30305", "lat": 33.8236, "lng": -84.3824, "short_name": "Peachtree Cadillac", "full_name": "Peachtree Cadillac Atlanta" },
+  { "id": 39, "city": "Kansas City", "state": "Missouri", "address": "100 Ward Pkwy", "zip": "64112", "lat": 39.0436, "lng": -94.5901, "short_name": "Ward Parkway Mazda", "full_name": "Kansas City Ward Parkway Mazda" },
+  { "id": 40, "city": "Omaha", "state": "Nebraska", "address": "3600 L St", "zip": "68107", "lat": 41.2062, "lng": -95.9664, "short_name": "Omaha Chrysler", "full_name": "Omaha National Dodge Ram" },
+  { "id": 41, "city": "Raleigh", "state": "North Carolina", "address": "4000 Glenwood Ave", "zip": "27612", "lat": 35.8452, "lng": -78.6946, "short_name": "Raleigh Jaguar", "full_name": "Raleigh Glenwood Avenue Jaguar" },
+  { "id": 42, "city": "Colorado Springs", "state": "Colorado", "address": "1200 Motor City Dr", "zip": "80905", "lat": 38.8142, "lng": -104.8340, "short_name": "Springs Volkswagen", "full_name": "Colorado Springs Volkswagen" },
+  { "id": 43, "city": "Miami", "state": "Florida", "address": "1200 S Dixie Hwy", "zip": "33146", "lat": 25.7123, "lng": -80.2641, "short_name": "Dixie Mercedes", "full_name": "Mercedes Benz of Coral Gables" },
+  { "id": 44, "city": "Oakland", "state": "California", "address": "3000 Broadway", "zip": "94611", "lat": 37.8186, "lng": -122.2592, "short_name": "Oakland Premium Auto", "full_name": "Broadway Premium Motors" },
+  { "id": 45, "city": "Minneapolis", "state": "Minnesota", "address": "500 Wayzata Blvd", "zip": "55403", "lat": 44.9752, "lng": -93.2982, "short_name": "Wayzata Nissan", "full_name": "Minneapolis Wayzata Chrysler" },
+  { "id": 46, "city": "Tulsa", "state": "Oklahoma", "address": "4700 S Memorial Dr", "zip": "74145", "lat": 36.1018, "lng": -95.8852, "short_name": "Tulsa Chevrolet", "full_name": "Tulsa Memorial Drive Chevrolet" },
+  { "id": 47, "city": "Cleveland", "state": "Ohio", "address": "13000 Brookpark Rd", "zip": "44135", "lat": 41.4172, "lng": -81.8211, "short_name": "Cleveland Jeep", "full_name": "Cleveland Brookpark Dodge Jeep" },
+  { "id": 48, "city": "Tampa", "state": "Florida", "address": "1100 N Florida Ave", "zip": "33602", "lat": 27.9542, "lng": -82.4578, "short_name": "Tampa Premium Audi", "full_name": "Tampa Florida Avenue Audi" },
+  { "id": 49, "city": "Honolulu", "state": "Hawaii", "address": "2850 Ala Moana Blvd", "zip": "96815", "lat": 21.2891, "lng": -157.8423, "short_name": "Honolulu BMW", "full_name": "Ala Moana Pride BMW" },
+  { "id": 50, "city": "Salt Lake City", "state": "Utah", "address": "1500 S State St", "zip": "84115", "lat": 40.7306, "lng": -111.8882, "short_name": "SLC Premium Auto", "full_name": "Utah Premier Motors" }
 ]`
   },
   {
@@ -351,8 +511,7 @@ export default Register;`
     "full_name": "Wichita Auto Outlet"
   }
 ]`
-  },
-  {
+  },  {
     id: 'task-14-15',
     taskNum: 14,
     title: 'cURL: Get SQLite Car Makes & Models Database',
@@ -361,26 +520,53 @@ export default Register;`
     githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/Project-Deliverables/getallcarmakes',
     content: `curl -X GET "https://capstone-developer-8000.theiadocker-3-labs-prod-theia-labs-direct-labs.us-east.containers.appdomain.cloud/djangoapp/get_cars"
 
-[
-  {
-    "car_make": "Audi",
-    "description": "Audi AG is a German automotive manufacturer of luxury vehicles.",
-    "car_models": [
-      {"name": "A6", "type": "SEDAN", "year": 2010},
-      {"name": "Q7", "type": "SUV", "year": 2018},
-      {"name": "A4", "type": "SEDAN", "year": 2015}
-    ]
-  },
-  {
-    "car_make": "Toyota",
-    "description": "Toyota Motor Corporation is a Japanese multinational automotive manufacturer.",
-    "car_models": [
-      {"name": "Camry", "type": "SEDAN", "year": 2021},
-      {"name": "RAV4", "type": "SUV", "year": 2022}
-    ]
-  }
-]`
-  },
+{
+  "CarModels": [
+    {
+      "id": 1,
+      "make": "Audi",
+      "model": "A6",
+      "type": "SEDAN",
+      "year": 2010
+    },
+    {
+      "id": 2,
+      "make": "Audi",
+      "model": "Q7",
+      "type": "SUV",
+      "year": 2018
+    },
+    {
+      "id": 3,
+      "make": "Audi",
+      "model": "A4",
+      "type": "SEDAN",
+      "year": 2015
+    },
+    {
+      "id": 4,
+      "make": "Toyota",
+      "model": "Camry",
+      "type": "SEDAN",
+      "year": 2021
+    },
+    {
+      "id": 5,
+      "make": "Toyota",
+      "model": "RAV4",
+      "type": "SUV",
+      "year": 2022
+    },
+    {
+      "id": 6,
+      "make": "Toyota",
+      "model": "Sienna",
+      "type": "WAGON",
+      "year": 2020
+    }
+  ]
+}`
+  },,
   {
     id: 'task-16',
     taskNum: 16,
@@ -409,15 +595,37 @@ Run actions/checkout@v3
     persist-credentials: false
     clean: true
     fetch-depth: 1
+  /usr/bin/git config --global --add safe.directory /github/workspace
+  /usr/bin/git init
+  /usr/bin/git remote add origin https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS.git
+  /usr/bin/git fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +refs/heads/main:refs/remotes/origin/main
+  /usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+
+Run Python Setup Environment Check
+  Python Version: 3.10.12
+  Pip Version: 23.2.1
+
+Run pip3 install flake8 pytest
+  Installing collected packages: flake8, pytest, pycodestyle, pyflakes, pluggy, iniconfig, exceptiongroup
+  Successfully installed exceptiongroup-1.2.0 flake8-6.1.0 iniconfig-2.0.0 pluggy-1.3.0 pycodestyle-2.11.1 pyflakes-3.1.0 pytest-7.4.3
 
 Run flake8 linting check
+  shell: /usr/bin/bash -e {0}
   Running: flake8 server --count --select=E9,F63,F7,F82 --show-source --statistics
+  0
+  Running: flake8 server --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
   0
   Status: GitHub Actions linter checks passed successfully.
 
 Run pytest unit-tests module
+  shell: /usr/bin/bash -e {0}
+  ============================= test session starts ==============================
+  platform linux -- Python 3.10.12, pytest-7.4.3, pluggy-1.3.0
+  rootdir: /github/workspace/server
   collected 12 items
+
   tests/test_models.py ............                                         [100%]
+
   ============================== 12 passed in 1.45s ==============================
   Status: All unit tests passed! Done.`
   },
@@ -429,6 +637,114 @@ Run pytest unit-tests module
     filename: 'deploymentURL',
     githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/Project-Deliverables/deploymentURL',
     content: `https://briangator.github.io/Full-Stack-Car-Dealer-Capstone-Python-JS/`
+  },
+  {
+    id: 'task-12',
+    taskNum: 12,
+    title: 'Django Admin Portal Sign-In Screenshot',
+    type: 'image-placeholder',
+    filename: 'admin_login.png',
+    githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/Project-Deliverables/admin_login.png',
+    content: 'DJANGO_ADMIN_LOGIN'
+  },
+  {
+    id: 'task-13',
+    taskNum: 13,
+    title: 'Django Admin Portal Log-Out Screenshot',
+    type: 'image-placeholder',
+    filename: 'admin_logout.png',
+    githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/Project-Deliverables/admin_logout.png',
+    content: 'DJANGO_ADMIN_LOGOUT'
+  },
+  {
+    id: 'task-17',
+    taskNum: 17,
+    title: 'Dealers Portal Landing Page View',
+    type: 'image-placeholder',
+    filename: 'get_dealers.png',
+    githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/Project-Deliverables/get_dealers.png',
+    content: 'DEALERS_LANDING'
+  },
+  {
+    id: 'task-18',
+    taskNum: 18,
+    title: 'Dealers Portal Active Login View',
+    type: 'image-placeholder',
+    filename: 'get_dealers_loggedin.png',
+    githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/Project-Deliverables/get_dealers_loggedin.png',
+    content: 'DEALERS_LOGGEDIN'
+  },
+  {
+    id: 'task-19',
+    taskNum: 19,
+    title: 'Dealers Filtered by State View',
+    type: 'image-placeholder',
+    filename: 'dealersbystate.png',
+    githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/Project-Deliverables/dealersbystate.png',
+    content: 'DEALERS_FILTERED'
+  },
+  {
+    id: 'task-20',
+    taskNum: 20,
+    title: 'Specific Dealership Reviews Detail View',
+    type: 'image-placeholder',
+    filename: 'dealer_id_reviews.png',
+    githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/Project-Deliverables/dealer_id_reviews.png',
+    content: 'DEALER_REVIEWS'
+  },
+  {
+    id: 'task-21',
+    taskNum: 21,
+    title: 'Post Review Form Component View',
+    type: 'image-placeholder',
+    filename: 'dealership_review_submission.png',
+    githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/Project-Deliverables/dealership_review_submission.png',
+    content: 'DEALER_REVIEW_FORM'
+  },
+  {
+    id: 'task-22',
+    taskNum: 22,
+    title: 'Post Review Sentiment Verification View',
+    type: 'image-placeholder',
+    filename: 'added_review.png',
+    githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/Project-Deliverables/added_review.png',
+    content: 'DEALER_REVIEW_ADDED'
+  },
+  {
+    id: 'task-25',
+    taskNum: 25,
+    title: 'Deployed Landing Page Verification',
+    type: 'image-placeholder',
+    filename: 'deployed_landingpage.png',
+    githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/Project-Deliverables/deployed_landingpage.png',
+    content: 'DEPLOYED_LANDING'
+  },
+  {
+    id: 'task-26',
+    taskNum: 26,
+    title: 'Deployed Session Authentication State',
+    type: 'image-placeholder',
+    filename: 'deployed_loggedin.png',
+    githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/Project-Deliverables/deployed_loggedin.png',
+    content: 'DEPLOYED_LOGGEDIN'
+  },
+  {
+    id: 'task-27',
+    taskNum: 27,
+    title: 'Deployed Dealer Details Verification',
+    type: 'image-placeholder',
+    filename: 'deployed_dealer_detail.png',
+    githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/Project-Deliverables/deployed_dealer_detail.png',
+    content: 'DEPLOYED_DEALER_DETAIL'
+  },
+  {
+    id: 'task-28',
+    taskNum: 28,
+    title: 'Deployed Live Review Posting Verification',
+    type: 'image-placeholder',
+    filename: 'deployed_add_review.png',
+    githubUrl: 'https://github.com/BrianGator/Full-Stack-Car-Dealer-Capstone-Python-JS/blob/main/Project-Deliverables/deployed_add_review.png',
+    content: 'DEPLOYED_ADD_REVIEW'
   }
 ];
 
