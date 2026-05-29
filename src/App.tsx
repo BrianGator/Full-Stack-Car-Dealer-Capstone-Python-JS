@@ -194,26 +194,29 @@ function renderScreenshotMockup(key: string) {
             <thead>
               <tr className="border-b border-slate-800 font-extrabold text-slate-400 uppercase text-[9px] tracking-wider">
                 <th className="p-2">ID</th>
-                <th className="p-2">Dealership Name</th>
+                <th className="p-2">Dealer Name</th>
+                <th className="p-2">Address</th>
                 <th className="p-2">City</th>
                 <th className="p-2">State</th>
-                <th className="p-2">Address</th>
+                <th className="p-2">ZIP Code</th>
               </tr>
             </thead>
             <tbody>
               <tr className="border-b border-slate-850 text-slate-300">
                 <td className="p-2 text-blue-400 font-bold font-mono">15</td>
                 <td className="p-2 font-bold text-white">Topeka Motors</td>
+                <td className="p-2 font-mono">1200 Kansas Ave</td>
                 <td className="p-2">Topeka</td>
                 <td className="p-2">Kansas</td>
-                <td className="p-2 font-mono">1200 Kansas Ave</td>
+                <td className="p-2 font-mono text-slate-400">66612</td>
               </tr>
               <tr className="border-b border-slate-850 text-slate-300">
                 <td className="p-2 text-blue-400 font-bold font-mono">29</td>
                 <td className="p-2 font-bold text-white">Wichita Cars</td>
+                <td className="p-2 font-mono">1500 E Douglas Ave</td>
                 <td className="p-2">Wichita</td>
                 <td className="p-2">Kansas</td>
-                <td className="p-2 font-mono">1500 E Douglas Ave</td>
+                <td className="p-2 font-mono text-slate-400">67214</td>
               </tr>
             </tbody>
           </table>
@@ -237,9 +240,11 @@ function renderScreenshotMockup(key: string) {
             <thead>
               <tr className="border-b border-slate-800 font-extrabold text-slate-400 uppercase text-[9px] tracking-wider">
                 <th className="p-2">ID</th>
-                <th className="p-2">Dealership Name</th>
+                <th className="p-2">Dealer Name</th>
+                <th className="p-2">Address</th>
                 <th className="p-2">City</th>
                 <th className="p-2">State</th>
+                <th className="p-2">ZIP Code</th>
                 <th className="p-2">Actions</th>
               </tr>
             </thead>
@@ -247,8 +252,10 @@ function renderScreenshotMockup(key: string) {
               <tr className="border-b border-slate-850 text-slate-300">
                 <td className="p-2 text-blue-400 font-bold font-mono">15</td>
                 <td className="p-2 font-bold text-white">Topeka Motors</td>
-                <td className="p-2">Topeka</td>
-                <td className="p-2">Kansas</td>
+                <td className="p-2 text-slate-300 font-mono">1200 Kansas Ave</td>
+                <td className="p-2 text-slate-300">Topeka</td>
+                <td className="p-2 text-slate-300">Kansas</td>
+                <td className="p-2 font-mono text-slate-400">66612</td>
                 <td className="p-2">
                   <span className="bg-blue-600 text-white text-[9px] font-bold px-2 py-0.5 rounded cursor-pointer uppercase">Review Dealer</span>
                 </td>
@@ -278,7 +285,9 @@ function renderScreenshotMockup(key: string) {
                 <th className="p-2">ID</th>
                 <th className="p-2">Dealer Name</th>
                 <th className="p-2">Address</th>
-                <th className="p-2">Zip</th>
+                <th className="p-2">City</th>
+                <th className="p-2">State</th>
+                <th className="p-2">ZIP Code</th>
               </tr>
             </thead>
             <tbody>
@@ -286,13 +295,17 @@ function renderScreenshotMockup(key: string) {
                 <td className="p-2 text-blue-400 font-mono font-bold">15</td>
                 <td className="p-2 text-white font-extrabold">Topeka Motors</td>
                 <td className="p-2 text-slate-300">1200 Kansas Ave</td>
-                <td className="p-2 text-slate-400">66612</td>
+                <td className="p-2 text-slate-300">Topeka</td>
+                <td className="p-2 text-slate-300">Kansas</td>
+                <td className="p-2 text-slate-400 font-mono">66612</td>
               </tr>
               <tr>
                 <td className="p-2 text-blue-400 font-mono font-bold">29</td>
                 <td className="p-2 text-white font-extrabold">Wichita Cars</td>
                 <td className="p-2 text-slate-300">1500 E Douglas Ave</td>
-                <td className="p-2 text-slate-400">67214</td>
+                <td className="p-2 text-slate-300">Wichita</td>
+                <td className="p-2 text-slate-300">Kansas</td>
+                <td className="p-2 text-slate-400 font-mono">67214</td>
               </tr>
             </tbody>
           </table>
@@ -1790,8 +1803,10 @@ export default function App() {
                             <tr className="bg-slate-100/50 border-b border-slate-200 text-[10px] uppercase tracking-wider text-slate-500 font-bold">
                               <th className="px-4 py-2 text-center w-12">ID</th>
                               <th className="px-4 py-2">Dealership Name</th>
-                              <th className="px-4 py-2">Location</th>
                               <th className="px-4 py-2">Address</th>
+                              <th className="px-4 py-2">City</th>
+                              <th className="px-4 py-2">State</th>
+                              <th className="px-4 py-2">ZIP Code</th>
                               <th className="px-4 py-2 text-center">Action</th>
                             </tr>
                           </thead>
@@ -1824,14 +1839,19 @@ export default function App() {
                                       </div>
                                       <div className="text-[10px] text-slate-400 italic font-mono">{dealer.short_name}</div>
                                     </td>
+                                    <td className="px-4 py-3 text-slate-500">
+                                      {dealer.address}
+                                    </td>
+                                    <td className="px-4 py-3 text-slate-600 font-medium">
+                                      {dealer.city}
+                                    </td>
                                     <td className="px-4 py-3 font-medium whitespace-nowrap">
                                       <span className="bg-blue-100 text-blue-800 text-[10px] px-2 py-0.5 rounded-full font-bold">
-                                        {dealer.state.toUpperCase()}
+                                        {dealer.state}
                                       </span>
-                                      <span className="ml-2 text-slate-500 text-[11px]">{dealer.city}</span>
                                     </td>
-                                    <td className="px-4 py-3 text-slate-500 max-w-[160px] truncate">
-                                      {dealer.address}
+                                    <td className="px-4 py-3 font-mono text-[11px] text-slate-600">
+                                      {dealer.zip}
                                     </td>
                                     <td className="px-4 py-3 text-center" onClick={(e) => e.stopPropagation()}>
                                       {sessionActive ? (
@@ -1853,7 +1873,7 @@ export default function App() {
                               })
                             ) : (
                               <tr>
-                                <td colSpan={5} className="px-6 py-8 text-center text-slate-400 font-medium font-sans">
+                                <td colSpan={7} className="px-6 py-8 text-center text-slate-400 font-medium font-sans">
                                   No dealerships found carrying vehicles matching current query specs.
                                 </td>
                               </tr>

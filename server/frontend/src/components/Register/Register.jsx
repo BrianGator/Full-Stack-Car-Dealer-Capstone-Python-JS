@@ -1,3 +1,4 @@
+// URL: xrwvm-fullstack_developer_capstone
 import React, { useState } from "react";
 import close_icon from "../assets/close.png" // Simulated fallback assets
 
@@ -14,7 +15,7 @@ const Register = () => {
 
   const register = async (e) => {
     e.preventDefault();
-    let register_url = window.location.origin + "/djangoapp/register";
+    let register_url = window.location.origin + "xrwvm-fullstack_developer_capstone";
     try {
       const res = await fetch(register_url, {
           method: "POST",

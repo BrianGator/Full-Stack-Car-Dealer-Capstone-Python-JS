@@ -56,7 +56,7 @@ TASK 8: Dealer Reviews Service Call
 
 TASK 9: Dealership Index Retrieval
   - File: /Project-Deliverables/getalldealers
-  - Contains cURL GET fetching list of all national dealerships.
+  - Contains cURL GET fetching list of all 50 national dealerships.
 
 TASK 10: Specific Dealer Information
   - File: /Project-Deliverables/getdealerbyid
